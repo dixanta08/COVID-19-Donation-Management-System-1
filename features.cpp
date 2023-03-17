@@ -36,9 +36,19 @@ void NewDonation() {
 		printf("\nPlease provide the donator name: ");
 		gets_s(Donator);
 		printf("\nPlease provide the number of shipments: ");
-		scanf_s("%d", &NoOfShipment); while (getchar() != '\n');
+		scanf_s("%d", &NoOfShipment); 
+		if(NoOfShipment <=0){
+			printf("Number of shipment must be greater than 0);
+			       break;
+		}
+		while (getchar() != '\n');
 		printf("\nPlease provide the quantity received (millions): ");
-		scanf_s("%lf", &QuantityReceived); while (getchar() != '\n');
+		scanf_s("%lf", &QuantityReceived);
+		if(QuantityRecieved <=0){
+			printf("Quantity recieved must be greater than 0);
+			       break;
+		}
+		while (getchar() != '\n');
 		
 		AddDonationToFile(SupplyName, SupplyCode, Donator, NoOfShipment, QuantityReceived);
 		printf("\n\n\n           ==================================================\n");
